@@ -12,13 +12,17 @@ public:
     void resized() override;
 
 private:
+    class MinimalLookAndFeel;
     class RotaryControl;
     class WaveSelector;
+    class EnvelopeDisplay;
 
     MiniSerumAudioProcessor& processorRef;
+    std::unique_ptr<MinimalLookAndFeel> lookAndFeel;
 
     WaveSelector* osc1WaveSelectorPtr = nullptr;
     WaveSelector* osc2WaveSelectorPtr = nullptr;
+    EnvelopeDisplay* envelopeDisplayPtr = nullptr;
 
     RotaryControl* oscMixControlPtr = nullptr;
     RotaryControl* osc2DetuneControlPtr = nullptr;
